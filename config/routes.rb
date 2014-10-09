@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  resources :posts
+  resources :pictures
   devise_for :users
   resources :users
 
   root 'users#index'
-
+  get ':id' => 'users#show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

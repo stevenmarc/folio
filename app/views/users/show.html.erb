@@ -10,7 +10,12 @@
   <%= @user.slug_line %>
 </p>
 
+<p>
+  <%= render '/pictures/list', user: @user %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
-
+<br>
+<%= link_to 'Add picture', new_picture_path(@user) %>
 

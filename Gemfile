@@ -28,6 +28,8 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'bootstrap-sass'
 gem 'country_select'
+gem 'carrierwave'
+# gem 'sane_permalinks', github: 'averell23/sane_permalinks'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

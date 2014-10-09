@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_vfuser!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
  
  def index
  	 @users = User.all
@@ -11,11 +11,14 @@ class UsersController < ApplicationController
  end
 
  def show
- 	@user = User.find(params[:id])
+
  end
 
 def edit
- 	@user = User.find(params[:id])
+  if @user != current_user
+    render text: 'Not allowed to edit'
+  end
+
  end
 
   def update
@@ -33,7 +36,7 @@ def edit
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
-      @user = User.find(params[:id])
+      @user = User.find_by_username(params[:id]) || User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

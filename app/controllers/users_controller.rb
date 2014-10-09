@@ -15,7 +15,7 @@ class UsersController < ApplicationController
  end
 
 def edit
-  if @user != current_user
+  if check_user == "false"
     render text: 'Not allowed to edit'
   end
 
@@ -33,11 +33,17 @@ def edit
     end
 	end
 
+  def check_user
+      @user == current_user
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find_by_username(params[:id]) || User.find(params[:id])
     end
+
+ 
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params

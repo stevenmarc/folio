@@ -14,8 +14,16 @@
   <%= render '/pictures/list', user: @user %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<p>
+  <%= render '/posts/list', user: @user %>
+</p>
+
+ |
 <%= link_to 'Back', users_path %>
 <br>
+<% if current_user == @user %>
+<%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Add picture', new_picture_path(@user) %>
+
+<% end %>
 

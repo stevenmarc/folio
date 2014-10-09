@@ -1,0 +1,73 @@
+  <%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group has-feedback">
+    <%= f.label :username %><br>
+    <%= f.text_field :username %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :slug_line %><br>
+    <%= f.text_field :slug_line %>
+  </div> 
+  <br> 
+  <div class="text_area">
+    <%= f.label :about %><br>
+    <%= f.text_area :about %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :country %><br>
+    <%= f.country_select :country %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%= f.text_field :city %>
+  </div> 
+  <br>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div> 
+  <br>
+  <div class="date">
+    <%= f.label :birthdate %><br>
+    <%= f.date_field :birthdate %>
+  </div>   
+
+  <br>
+  <div class="check_box">
+    <%= f.label :show_age %><br>
+    <%= f.check_box :show_age %>
+  </div>
+
+
+  <br> 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>
+
+
+ 

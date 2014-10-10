@@ -3,8 +3,12 @@
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <p><%= f.label :username %><br />
+<%= f.text_field :username, autofocus: true %></p>
+
   <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+  <%= f.email_field :email %></div>
 
   <div><%= f.label :password %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141009083545) do
+ActiveRecord::Schema.define(version: 20141010124156) do
 
   create_table "pictures", force: true do |t|
     t.string   "title"
@@ -33,12 +33,12 @@ ActiveRecord::Schema.define(version: 20141009083545) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                              default: "", null: false
+    t.string   "encrypted_password",                 default: "", null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                      default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20141009083545) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",        default: 0,  null: false
+    t.integer  "failed_attempts",                    default: 0,  null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
     t.string   "username"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20141009083545) do
     t.string   "color_scheme"
     t.string   "fonts_choice"
     t.string   "layout_choice"
-    t.string   "background_picture"
+    t.integer  "background_picture_id",  limit: 255
     t.string   "featured"
     t.boolean  "show_pictures"
     t.boolean  "show_posts"

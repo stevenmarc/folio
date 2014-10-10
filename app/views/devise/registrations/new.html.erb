@@ -5,10 +5,10 @@
   <%= devise_error_messages! %>
 
 <p><%= f.label :username %><br />
-<%= f.text_field :username %></p>
+<%= f.text_field :username, autofocus: true %></p>
 
   <div><%= f.label :email %><br />
-  <%= f.email_field :email, autofocus: true %></div>
+  <%= f.email_field :email %></div>
 
   <div><%= f.label :password %> <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %><br />
     <%= f.password_field :password, autocomplete: "off" %></div>

@@ -45,11 +45,6 @@
     <%= f.text_field :city %>
   </div> 
   <br>
-  <div class="field">
-    <%= f.label :address %><br>
-    <%= f.text_field :address %>
-  </div> 
-  <br>
   <div class="date">
     <%= f.label :birthdate %><br>
     <%= f.date_field :birthdate %>
@@ -60,8 +55,23 @@
     <%= f.label :show_age %><br>
     <%= f.check_box :show_age %>
   </div>
-
-
+<br>
+    <div class="form-group"> 
+    <%= f.label :color_scheme %><br>
+    <%= f.select :color_scheme, options_for_select(%w[light medium dark]) %>
+  </div>
+ <br>
+    <div class="form-group"> 
+    <%= f.label :fonts_choice %><br>
+    <%= f.select :fonts_choice, options_for_select(["Open_Sans", "Lobster", "Lato"]) %>
+  </div>
+  
+ <br>
+    <div class="form-group"> 
+    <%= f.label :background_picture_id %><br>
+    <%= f.select :background_picture_id, @user.pictures.all.map{|picture| [picture.title, picture.id]} %>
+  </div>
+  
   <br> 
   <div class="actions">
     <%= f.submit %>

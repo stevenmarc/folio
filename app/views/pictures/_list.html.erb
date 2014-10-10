@@ -13,11 +13,11 @@
       <tr>
         <td><%= picture.title %></td>
         <td><img src="<%= picture.url %>" width="100" /></td>
-        <td><%= picture.user_id %></td>
-        <td><%= link_to 'Show', picture %></td>
+        <td><%= picture.user.username %></td>
+        <td><%= link_to 'Show', picture %><br>
         <% if current_user == @user %>
-        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
-        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td><% end %>
+        <%= link_to 'Edit', edit_picture_path(picture) %><br>
+        <%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td><% end %>
       </tr>
     <% end %>
   </tbody>

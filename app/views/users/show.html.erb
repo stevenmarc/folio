@@ -1,3 +1,4 @@
+<div class="container">
 <body class="<%= @user.get_color_scheme %> ">
 
 <p id="notice"><%= notice %></p>
@@ -23,7 +24,6 @@
 </p>
 
 
-<%= link_to 'Back', users_path %>
 <br>
 <% if current_user == @user %>
 <%= link_to 'Edit', edit_user_path(@user) %>
@@ -33,4 +33,4 @@
 <% end %>
 </div>
 </body>
-
+</div>

@@ -1,6 +1,41 @@
 @import 'variables';
 @import 'bootstrap';
 
+body.homepage {
+  background: url('/images/uploads-1412238370909393b4a19-79f023f1.jpeg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #cccccc;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  font-weight: 700;
+  font-size: 60px;
+}
+
+div.transbox {
+    width: 500px;
+    height: auto;
+    background-color: #ffffff;
+    border: 0px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.transbox td {
+    color: #000000;
+}
+
+td {
+  padding: 10px;
+}
+
+th {
+  text-align: center;
+}
 
 body.light {
   h2 {color: #4EB1BA}
@@ -9,6 +44,7 @@ body.light {
   img { width: 100px}
   table {color: #222930}
 }
+
 
 body.medium {
   img { width: 23px}

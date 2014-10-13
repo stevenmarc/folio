@@ -1,13 +1,13 @@
-<div class="row">
-  <div class="col-xs-6 col-md-3">
+<div class="container">
+  <ul class="row list-unstyled">
     <% user.pictures.each do |picture| %>
-    
+    <li class="col-xs-4">
     <div class="thumbnail imageHolder">
       
       <img src="<%= picture.url %>" alt="<%= picture.title %>">
       <div class="caption">
         <h3><%= picture.title %></h3>
-        <p><%= picture.description %></p>
+        <div><%= picture.description %></div>
       </div>
       <div class="user-caption transition">
           <%= link_to 'Show', picture %><br>
@@ -17,6 +17,7 @@
           </div>
           <% end %>
     </div>
+    </li>
     <% end %>
-  </div>
+  </ul>
 </div>

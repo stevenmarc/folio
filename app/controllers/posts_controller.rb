@@ -5,6 +5,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.all
+    @user = current_user
+   redirect_to @user
   end
 
   # GET /posts/1

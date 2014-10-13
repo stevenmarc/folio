@@ -1,12 +1,20 @@
 <div class="container">
-<body class="<%= @user.get_color_scheme %> ">
+  <div class="<%= @user.get_color_scheme %> ">
 
-<p id="notice"><%= notice %></p>
+  <% if @user.background_picture %>
+    <style>
+      body.homepage {
+        background-image: url(<%= @user.background_picture.url %>)
+      }
+    </style>
+  <% end %>
 
-<p>
-  <div class="<%= @user.get_fonts_choice %> ">
-  <h2>
-  <%= @user.username %></h2>
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <div class="<%= @user.get_fonts_choice %> ">
+    <h2>
+    <%= @user.username %></h2>
 </div>
 </p>
 
@@ -15,12 +23,13 @@
   <%= @user.slug_line %>
 </p>
 
+
 <p>
   <%= render '/pictures/list', user: @user %>
 </p>
 
 <p>
-  <%= render '/posts/list', user: @user %>
+  <%= render '/posts/featured', user: @user %>
 </p>
 
 
@@ -32,5 +41,5 @@
 
 <% end %>
 </div>
-</body>
+</div>
 </div>

@@ -13,9 +13,9 @@
       </a>
       <ul class="dropdown-menu">
         <li><%= link_to "Edit User", edit_user_registration_path %></li>
-        <li><%= link_to "Edit Profile", edit_user_path(current_user) %>
-          <li><%= link_to 'Add picture', new_picture_path(current_user) %></li>
-<li><%= link_to 'Add post', new_post_path(current_user) %></li>
+        <li><a href="#editProfile" data-toggle="modal">Edit Profile</li>
+        <li><a href="#addPicture" data-toggle="modal">Add picture</li>
+        <li><a href="#addPost" data-toggle="modal">Add post</li>
         <li class="divider"></li>
         <li>
           <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
@@ -27,3 +27,55 @@
     <li><%= link_to "Sign in", new_user_session_path %></li>
   <% end %>
 </ul>
+
+
+
+
+
+<!-- Update profile modal -->
+<div class="modal fade" id="editProfile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit your profile</h4>
+      </div>
+      <div class="modal-body">
+      <%= render 'users/profile_form' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add picture modal -->
+<div class="modal fade" id="addPicture" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a picture</h4>
+      </div>
+      <div class="modal-body">
+        <% @picture = Picture.new %>
+      <%= render 'pictures/form' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Add post modal -->
+<div class="modal fade" id="addPost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add a post</h4>
+      </div>
+      <div class="modal-body">
+        <% @post = Post.new %>
+      <%= render 'posts/form' %>
+      </div>
+    </div>
+  </div>
+</div>

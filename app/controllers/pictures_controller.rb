@@ -6,6 +6,8 @@ class PicturesController < ApplicationController
   # GET /pictures.json
   def index
     @pictures = Picture.all
+    @user = current_user
+   redirect_to @user
   end
 
   # GET /pictures/1

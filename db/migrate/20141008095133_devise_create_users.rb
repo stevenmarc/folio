@@ -46,7 +46,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string  :color_scheme
       t.string  :fonts_choice
       t.string  :layout_choice
-      t.string  :background_picture
+      t.integer  :background_picture_id
       t.string  :featured
       t.boolean :show_pictures
       t.boolean :show_posts
